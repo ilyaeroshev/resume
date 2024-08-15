@@ -1,3 +1,5 @@
+#!/bin/bash
+
 TEMP_FILE="play.out"
 
 g++ --std=c++20 -Wall -Wextra -fsanitize=thread -I . src/*/*.cpp play/main.cpp -o $TEMP_FILE && \

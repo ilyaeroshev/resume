@@ -1,14 +1,16 @@
+#!/bin/bash
+
 TEMP_FILE="test.out"
 
-echo "UNIT TESTS:\n"
+echo -e "UNIT TESTS:\n"
 g++ --std=c++20 -Wall -Wextra -fsanitize=address,undefined -I . test/unit.cpp -o $TEMP_FILE && \
 ./$TEMP_FILE && \
 
-echo "\nRANDOM TESTS:\n"
+echo -e "\nRANDOM TESTS:\n"
 g++ --std=c++20 -Wall -Wextra -fsanitize=address,undefined -I . test/random.cpp -o $TEMP_FILE && \
 ./$TEMP_FILE && \
 
-echo "\nPERFORMANCE TESTS:\n" && \
+echo -e "\nPERFORMANCE TESTS:\n" && \
 g++ --std=c++20 -Wall -Wextra -O3 -I . test/performance.cpp -o $TEMP_FILE && \
 ./$TEMP_FILE
 
